@@ -15,6 +15,9 @@ namespace Gameplay
 			const int tile_size = 32;
 			int slice_count = 12;
 
+			const float cell_top_offset = 274.f;
+			const float cell_left_offset = 583.f;
+
 			void initializeButtonImage(float width, float height);
 
 		public:
@@ -25,6 +28,7 @@ namespace Gameplay
 			void render();
 
 			void setCellTexture();
+			sf::Vector2f getCellScreenPosition();
 		};
 	
 
