@@ -17,6 +17,9 @@ namespace Gameplay
             const float board_width = 866.f;
             const float board_height = 1080.f;
 
+            const float board_width_offset = 115.f;
+            const float board_height_offset = 329.f;
+
             BoardController* board_controller;
             UI::UIElement::ImageView* background_image;
 
@@ -29,6 +32,9 @@ namespace Gameplay
             void initialize();
             void update();
             void render();
+
+            float getCellWidth();
+            float getCellHeight();
         };
     }
 }

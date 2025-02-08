@@ -20,8 +20,9 @@ namespace Gameplay
         CellView::~CellView() { delete (cell_button); }
 
 
-        void CellView::initialize()
+        void CellView::initialize(float width, float height)
         {
+            initializeButtonImage(width, height);
             initializeButtonImage(tile_size * 3, tile_size * 3);
         }
 

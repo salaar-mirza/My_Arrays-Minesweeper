@@ -23,7 +23,7 @@ namespace Gameplay
 		public:
 			CellView(CellController* controller);
 			~CellView();
-			void initialize();
+			void initialize(float width, float height);
 			void update();
 			void render();
 
