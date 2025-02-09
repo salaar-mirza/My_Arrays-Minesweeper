@@ -4,9 +4,9 @@ namespace Gameplay
 {
 	namespace Cell
 	{
-		CellModel::CellModel()
+		CellModel::CellModel(int cell_index)
 		{
-			//Yet to implement
+			this->cell_index = cell_index;
 		}
 
 		CellModel::~CellModel() = default;
@@ -39,6 +39,11 @@ namespace Gameplay
 		void CellModel::setCellPosition(sf::Vector2i grid_position)
 		{
 			position = grid_position;
+		}
+
+		int CellModel::getCellIndex()
+		{
+			return cell_index;
 		}
 
 		void CellModel::reset()
