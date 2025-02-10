@@ -60,9 +60,9 @@ namespace UI
             instructions_button->initialize("Instructions Button", Config::instructions_button_texture_path, button_width, button_height, sf::Vector2f(0, instructions_button_y_position));
             quit_button->initialize("Quit Button", Config::quit_button_texture_path, button_width, button_height, sf::Vector2f(0, quit_button_y_position));
 
-            play_button->setCentreAlinged();
-            instructions_button->setCentreAlinged();
-            quit_button->setCentreAlinged();
+           // play_button->setCentreAlinged();
+            //instructions_button->setCentreAlinged();
+            //quit_button->setCentreAlinged();
         }
 
         void MainMenuUIController::registerButtonCallback()
