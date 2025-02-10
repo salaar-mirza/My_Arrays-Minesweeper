@@ -10,7 +10,6 @@ namespace Gameplay
     namespace Board
     {
         using namespace UI::UIElement;
-        //using namespace Cell;
         using namespace Global;
      
 
