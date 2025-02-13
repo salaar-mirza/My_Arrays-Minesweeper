@@ -42,7 +42,7 @@ namespace Gameplay
         {
             setCellTexture();
             cell_button->render();
-            std::cout << "cell  view" << std::endl;
+           // std::cout << "cell  view" << std::endl;
 
         }
 

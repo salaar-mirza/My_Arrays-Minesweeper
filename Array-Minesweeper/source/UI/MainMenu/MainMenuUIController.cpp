@@ -106,7 +106,7 @@ namespace UI
             play_button->render();
             instructions_button->render();
             quit_button->render();
-            std::cout << "Main menue Controller" << std::endl;
+           // std::cout << "Main menue Controller" << std::endl;
         }
 
         void MainMenuUIController::show()
