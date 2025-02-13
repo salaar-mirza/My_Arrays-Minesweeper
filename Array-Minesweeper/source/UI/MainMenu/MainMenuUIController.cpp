@@ -5,6 +5,7 @@
 #include "../../header/Event/EventService.h"
 #include "../../header/Global/Config.h"
 #include "../../header/Global/ServiceLocator.h"
+#include <iostream>
 
 namespace UI
 {
@@ -76,6 +77,8 @@ namespace UI
         {
             // GameState will change to gameplay state.
             ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::BUTTON_CLICK);
+            GameService::setGameState(GameState::GAMEPLAY);
+            ServiceLocator::getInstance()->getGameplayService()->startGame();
         }
 
         void MainMenuUIController::instructionsButtonCallback()
@@ -103,6 +106,7 @@ namespace UI
             play_button->render();
             instructions_button->render();
             quit_button->render();
+           // std::cout << "Main menue Controller" << std::endl;
         }
 
         void MainMenuUIController::show()
