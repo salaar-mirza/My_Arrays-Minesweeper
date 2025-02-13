@@ -22,7 +22,18 @@ namespace UI
             const float mine_text_left_offset = 660.f;
             UIElement::TextView* mine_text;
 
+            const float restart_button_top_offset = 100.f;
+            const float restart_button_left_offset = 920.f;
+
+            const float button_height = 80.f;
+            const float button_width = 80.f;
+
+            const int tile_height = 32;
+
+            UIElement::ButtonView* restart_button;
+
             void createTexts();
+
 
             void initializeTexts();
 
@@ -32,6 +43,13 @@ namespace UI
             void initializeMineText();
             void updateMineText();
             void destroy();
+
+            void createButton();
+            void initializeButton();
+            void registerButtonCallback();
+            void restartButtonCallback();
+
+
         public:
             GameplayUIController();
             ~GameplayUIController();
