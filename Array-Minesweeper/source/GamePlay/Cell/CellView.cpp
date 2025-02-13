@@ -1,8 +1,13 @@
 #include "../../header/Gameplay/Cell/CellView.h"
-#include "../../header/Global/Config.h"
-#include "../../header/Gameplay/Cell/CellController.h"
-#include "../../header/Gameplay/Cell/CellModel.h"
+
 #include <iostream>
+
+#include "../../header/Gameplay/Cell/CellModel.h"
+#include "../../header/Gameplay/Cell/CellController.h"
+#include "../../header/Global/Config.h"
+#include "../../header/Global/ServiceLocator.h"
+#include "../../header/Gameplay/GameplayService.h"
+#include "../../header/Sound/SoundService.h"
 
 namespace Gameplay
 {
@@ -30,6 +35,7 @@ namespace Gameplay
         {
             sf::Vector2f cell_screen_position = getCellScreenPosition(width,height);
             cell_button->initialize("Cell", Config::cells_texture_path, width * slice_count, height, cell_screen_position);
+            
             registerButtonCallback();
         }
 
@@ -42,8 +48,6 @@ namespace Gameplay
         {
             setCellTexture();
             cell_button->render();
-           // std::cout << "cell  view" << std::endl;
-
         }
 
 

@@ -101,9 +101,9 @@ namespace UI
 	{
 		delete(splash_screen_controller);
 		delete(main_menu_controller);
+		delete(gameplay_ui_controller);
 		delete(instructions_screen_controller);
 		delete(credit_screen_controller);
-		delete(gameplay_ui_controller);
 
 	}
 }

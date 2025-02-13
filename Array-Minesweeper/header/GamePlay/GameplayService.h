@@ -1,4 +1,5 @@
 #pragma once
+#include "../../header/Gameplay/GameplayController.h"
 
 namespace Gameplay
 {
@@ -8,6 +9,8 @@ namespace Gameplay
 	{
 	private:
 		GameplayController* gameplay_controller;
+		void createController();
+
 		void destroy();
 
 

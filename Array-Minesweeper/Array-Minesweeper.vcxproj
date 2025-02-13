@@ -37,6 +37,11 @@
     <Image Include="assets\textures\restart_button.png" />
   </ItemGroup>
   <ItemGroup>
+    <Font Include="assets\fonts\bubbleBobble.ttf" />
+    <Font Include="assets\fonts\DS_DIGIB.TTF" />
+    <Font Include="assets\fonts\roboto.ttf" />
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="header\Event\EventService.h" />
     <ClInclude Include="header\GamePlay\Board\BoardController.h" />
     <ClInclude Include="header\GamePlay\Board\BoardService.h" />
@@ -64,10 +69,6 @@
     <ClInclude Include="header\UI\UIElement\TextView.h" />
     <ClInclude Include="header\UI\UIElement\UIView.h" />
     <ClInclude Include="header\UI\UIService.h" />
-    <ClInclude Include="SFML\include\SFML\Graphics\Text.hpp" />
-    <ClInclude Include="SFML\include\SFML\Graphics\Texture.hpp" />
-    <ClInclude Include="SFML\include\SFML\Graphics\View.hpp" />
-    <ClInclude Include="SFML\include\SFML\Main.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -97,11 +98,6 @@
     <ClCompile Include="source\UI\UIElement\TextView.cpp" />
     <ClCompile Include="source\UI\UIElement\UIView.cpp" />
     <ClCompile Include="source\UI\UIService.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="assets\fonts\bubbleBobble.ttf" />
-    <Font Include="assets\fonts\DS_DIGIB.TTF" />
-    <Font Include="assets\fonts\roboto.ttf" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

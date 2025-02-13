@@ -19,20 +19,23 @@ namespace Gameplay
             void destroy();
 
         public:
-            CellController(sf::Vector2i position);
+            CellController(sf::Vector2i grid_position);
             ~CellController();
 
             void initialize(float cell_width, float cell_height);
             void update();
             void render();
-            void reset();
+
+            void openCell();
+            void flagCell();
 
             CellState getCellState();
             CellValue getCellValue();
             sf::Vector2i getCellPosition();
 
-            void openCell();
-            void flagCell();
+            void reset();
+
+           
 
         };
     }

@@ -4,6 +4,9 @@ namespace Gameplay
 {
 	namespace Board
 	{
+		using namespace Cell;
+		using namespace UI;
+		using namespace UI::UIElement;
 
 		BoardService::BoardService()
 		{
