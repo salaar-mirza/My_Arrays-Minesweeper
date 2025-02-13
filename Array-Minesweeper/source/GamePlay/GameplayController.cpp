@@ -6,9 +6,9 @@ namespace Gameplay
 {
 	using namespace Global;
 	using namespace Board;
-	GameplayController::GameplayController()
-	{
-	}
+	
+	GameplayController::GameplayController(){}
+
 	GameplayController::~GameplayController()
 	{
 	}
@@ -17,6 +17,11 @@ namespace Gameplay
 	}
 	void GameplayController::update()
 	{
+		updateRemainingTime();
+	}
+	void GameplayController::updateRemainingTime()
+	{
+		remaining_time -= ServiceLocator::getInstance()->getTimeService()->getDeltaTime();
 	}
 	void GameplayController::render()
 	{
@@ -24,5 +29,14 @@ namespace Gameplay
 	void GameplayController::reset()
 	{
 		ServiceLocator::getInstance()->getBoardService()->resetBoard();
+	}
+	void GameplayController::restart()
+	{
+		ServiceLocator::getInstance()->getBoardService()->resetBoard();
+		remaining_time = max_duration;
+	}
+	float GameplayController::getRemainingTime()
+	{
+		return remaining_time;
 	}
 }

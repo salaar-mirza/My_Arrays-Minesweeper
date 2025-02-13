@@ -2,6 +2,7 @@
 #include "../../header/Global/Config.h"
 #include "../../header/Gameplay/Cell/CellController.h"
 #include "../../header/Gameplay/Cell/CellModel.h"
+#include <iostream>
 
 namespace Gameplay
 {
@@ -41,6 +42,8 @@ namespace Gameplay
         {
             setCellTexture();
             cell_button->render();
+            std::cout << "cell  view" << std::endl;
+
         }
 
 
