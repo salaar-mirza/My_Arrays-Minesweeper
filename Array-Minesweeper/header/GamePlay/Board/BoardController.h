@@ -1,6 +1,8 @@
 #pragma once
 #include <sfml/Graphics.hpp>
 #include "../../header/Gameplay/Cell/CellController.h"
+#include "../../header/UI/UIElement/ButtonView.h"
+#include <random>
 
 namespace Gameplay
 {
@@ -24,14 +26,20 @@ namespace Gameplay
 			void render();
 			void reset();
 
+			void processCellInput(Cell::CellController* cell_controller, UI::UIElement::ButtonType button_type);
+
 			int getMinesCount();
 		private:
 			 
+			int flagged_cells;
+
 			BoardView* board_view;
 			Cell::CellController* board[number_of_rows][number_of_colums];
 
 			void createBoard();
 			void initializeCells();
+			void openCell(sf::Vector2i cell_position);
+			void flagCell(sf::Vector2i cell_position);
 			void resetBoard();
 			void deleteBoard();
 			void destroy();

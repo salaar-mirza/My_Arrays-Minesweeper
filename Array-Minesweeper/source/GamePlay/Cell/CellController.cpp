@@ -42,24 +42,31 @@ namespace Gameplay
 			return cell_model->getCellState();
 		}
 
+		void CellController::setCellState(CellState state)
+		{
+			cell_model->setCellState(state);
+		}
+
 		CellValue CellController::getCellValue()
 		{
 			return cell_model->getCellValue();
 		}
 
-		sf::Vector2i CellController::getCellPosition()
+		void CellController::setCellValue(CellValue value)
 		{
-			return cell_model->getCellPosition();
+			cell_model->setCellValue(value);
 		}
 
 		void CellController::openCell()
 		{
-			if (cell_model->getCellState() != CellState::FLAGGED)
-			{
-				cell_model->setCellState(CellState::OPEN);
-				ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::BUTTON_CLICK);
-			}
+			setCellState(CellState::OPEN);
 		}
+
+		bool CellController::canOpenCell()
+		{
+			return cell_model->getCellState() != CellState::FLAGGED && cell_model->getCellState() != CellState::OPEN;
+		}
+
 		void CellController::flagCell()
 		{
 			switch (cell_model->getCellState())
@@ -74,7 +81,10 @@ namespace Gameplay
 			ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::FLAG);
 		}
 	
-		
+		sf::Vector2i CellController::getCellPosition()
+		{
+			return cell_model->getCellPosition();
+		}
 
 		void CellController::reset()
 		{
