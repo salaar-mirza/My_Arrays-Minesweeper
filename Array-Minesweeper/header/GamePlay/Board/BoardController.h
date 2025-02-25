@@ -61,6 +61,7 @@ namespace Gameplay
 			void pupulateCells();
 			int countMinesAround(sf::Vector2i cell_position);
 			bool isValidCellPosition(sf::Vector2i cell_position);
+			void openAllCells();
 
 			void resetBoard();
 			void deleteBoard();
