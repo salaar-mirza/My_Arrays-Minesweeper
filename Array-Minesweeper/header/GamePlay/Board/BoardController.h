@@ -10,6 +10,13 @@ namespace Gameplay
 	{
 		class BoardView;
 
+		enum class BoardState
+		{
+			FIRST_CELL,
+			PLAYING,
+			COMPLETED
+		};
+
 		class BoardController
 		{
 
@@ -28,10 +35,17 @@ namespace Gameplay
 
 			void processCellInput(Cell::CellController* cell_controller, UI::UIElement::ButtonType button_type);
 
+			BoardState getBoardState();
+			void setBoardState(BoardState state);
+
 			int getMinesCount();
 		private:
 			 
 			int flagged_cells;
+
+			BoardState board_state;
+			std::default_random_engine random_engine;
+			std::random_device random_device;
 
 			BoardView* board_view;
 			Cell::CellController* board[number_of_rows][number_of_colums];
@@ -39,7 +53,15 @@ namespace Gameplay
 			void createBoard();
 			void initializeCells();
 			void openCell(sf::Vector2i cell_position);
+			//void flagCell(sf::Vector2i cell_position);
+
 			void flagCell(sf::Vector2i cell_position);
+			void populateBoard(sf::Vector2i cell_position);
+			void populateMines(sf::Vector2i cell_position);
+			void pupulateCells();
+			int countMinesAround(sf::Vector2i cell_position);
+			bool isValidCellPosition(sf::Vector2i cell_position);
+
 			void resetBoard();
 			void deleteBoard();
 			void destroy();
