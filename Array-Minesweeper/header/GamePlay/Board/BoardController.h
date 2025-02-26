@@ -40,7 +40,7 @@ namespace Gameplay
 
 			int getMinesCount();
 		private:
-			 
+
 			int flagged_cells;
 
 			BoardState board_state;
@@ -53,7 +53,6 @@ namespace Gameplay
 			void createBoard();
 			void initializeCells();
 			void openCell(sf::Vector2i cell_position);
-			//void flagCell(sf::Vector2i cell_position);
 
 			void flagCell(sf::Vector2i cell_position);
 			void populateBoard(sf::Vector2i cell_position);
@@ -62,6 +61,7 @@ namespace Gameplay
 			int countMinesAround(sf::Vector2i cell_position);
 			bool isValidCellPosition(sf::Vector2i cell_position);
 			void openAllCells();
+			void processCellValue(sf::Vector2i cell_position);
 
 			void resetBoard();
 			void deleteBoard();
