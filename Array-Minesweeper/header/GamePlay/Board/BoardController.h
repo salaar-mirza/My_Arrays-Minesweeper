@@ -38,6 +38,8 @@ namespace Gameplay
 			BoardState getBoardState();
 			void setBoardState(BoardState state);
 
+			void showBoard();
+
 			int getMinesCount();
 		private:
 
@@ -64,6 +66,7 @@ namespace Gameplay
 			void processCellValue(sf::Vector2i cell_position);
 			void openEmptyCells(sf::Vector2i cell_position);
 			void processEmptyCell(sf::Vector2i cell_position);
+			void processMineCell(sf::Vector2i cell_position);
 
 			void resetBoard();
 			void deleteBoard();

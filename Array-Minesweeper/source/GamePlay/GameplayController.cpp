@@ -2,12 +2,17 @@
 #include "../../header/Gameplay/Board/BoardService.h"
 #include "../../header/Time/TimeService.h"
 #include "../../header/Global/ServiceLocator.h"
+#include "../../header/Main/GameService.h"
+
 
 namespace Gameplay
 {
     using namespace Board;
     using namespace Global;
     using namespace Time;
+    using namespace Main;
+    using namespace Cell;
+    using namespace UI::UIElement;
 
     GameplayController::GameplayController() {}
 
@@ -35,5 +40,51 @@ namespace Gameplay
         return ServiceLocator::getInstance()->getBoardService()->getMinesCount();
     }
 
+    void GameplayController::endGame(GameResult result)
+    {
+        switch (result)
+        {
+        case GameResult::WON:
+            gameWon();
+            break;
+        case GameResult::LOST:
+            gameLost();
+            break;
+        default:
+            break;
+        }
+    }
+
     float GameplayController::getRemainingTime() { return remaining_time; }
+
+    void GameplayController::gameWon()
+    {
+    }
+
+    void GameplayController::gameLost()
+    {
+        if (game_result == GameResult::NONE)
+        {
+            game_result = GameResult::LOST;
+            beginGameOverTimer();
+            board_service->showBoard();
+            board_service->setBoardState(BoardState::COMPLETED);
+        }
+        else
+        {
+            showCredits();
+        }
+    }
+
+    void GameplayController::beginGameOverTimer()
+    {
+        remaining_time = game_over_time;
+    }
+
+    void GameplayController::showCredits()
+    {
+        GameService::setGameState(GameState::CREDITS);
+    }
+
+
 }
