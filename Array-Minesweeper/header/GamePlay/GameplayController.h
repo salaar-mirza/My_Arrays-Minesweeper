@@ -31,6 +31,7 @@ namespace Gameplay
 		void gameLost();
 		void beginGameOverTimer();
 		void showCredits();
+		bool isTimeOver();
 
 
 	public:
